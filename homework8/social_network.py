@@ -16,15 +16,18 @@ import random
 
 practice_graph = nx.Graph()
 
-practice_graph.add_node("A")
-practice_graph.add_node("B")
-practice_graph.add_node("C")
-# TODO: Add more here...
+import networkx as nx
 
-practice_graph.add_edge("A", "B")
-practice_graph.add_edge("A", "C")
-practice_graph.add_edge("B", "C")
-# TODO: Add more here...
+practice_graph = nx.Graph()
+practice_graph.add_edge("A","B")
+practice_graph.add_edge("A","C")
+practice_graph.add_edge("B","D")
+practice_graph.add_edge("B","C")
+practice_graph.add_edge("C","D")
+practice_graph.add_edge("C","F")
+practice_graph.add_edge("D","E")
+practice_graph.add_edge("F","D")
+
 
 assert len(practice_graph.nodes()) == 6
 assert len(practice_graph.edges()) == 8
@@ -36,17 +39,34 @@ def draw_practice_graph():
 
 # Comment out this line after you have visually verified your practice graph.
 # Otherwise, the picture will pop up every time that you run your program.
-draw_practice_graph()
+#draw_practice_graph()
 
 
 ###
 ### Problem 1b
 ###
 
-# (Your code goes here.)
+rj = nx.Graph()
+
+juliets_buddies = ["Nurse","Tybalt","Capulet","Friar Laurence", "Romeo"]
+for x in juliets_buddies:
+    rj.add_edge("Juliet", x)
+
+capulets_buddies = ["Tybalt", "Escalus", "Paris"]
+for x in capulets_buddies:
+    rj.add_edge("Capulet", x)
+
+romeos_buddies = ["Friar Laurence","Benvolio","Montague","Mercutio"]
+for x in romeos_buddies:
+    rj.add_edge("Romeo", x)
+
+rj.add_edge("Benvolio","Montague")
+rj.add_edge("Montague","Escalus")
+rj.add_edge("Escalus","Paris")
+rj.add_edge("Escalus","Mercutio")
 
 assert len(rj.nodes()) == 11
-assert len(rj.edges()) == 17
+assert len(rj.edges()) == 16
 
 def draw_rj():
     """Draw the rj graph to the screen and to a file."""
@@ -57,7 +77,7 @@ def draw_rj():
 # Comment out this line after you have visually verified your rj graph and
 # created your PDF file.
 # Otherwise, the picture will pop up every time that you run your program.
-draw_rj()
+#draw_rj()
 
 
 ###
