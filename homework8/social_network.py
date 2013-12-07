@@ -85,16 +85,23 @@ def draw_rj():
 ###
 
 def friends(graph, user):
-    """Returns a set of the friends of the given user, in the given graph.
-    The parameter 'user' is the string name of a person in the graph.
-    """
+    print graph.neighbors(user)
     return set(graph.neighbors(user))
-
+    
 
 def friends_of_friends(graph, user):
-    """Returns a set of friends of friends of the given user, in the given graph.
-    The result does not include the given user nor any of that user's friends.
-    """
+    for x in graph.neighbors(user):
+        s = set(graph.neighbors(x))
+        s.discard(user)
+        return s
+        
+    """for x in graph.neighbors(user):
+        for y in graph.neighbors(x):
+            if y == user:
+                pass
+            else:
+                print y"""
+                
     print "To be implemented"
 
 assert friends_of_friends(rj, "Mercutio") == set(['Benvolio', 'Capulet', 'Friar Laurence', 'Juliet', 'Montague'])
