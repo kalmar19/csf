@@ -41,9 +41,9 @@ Lead_Singers['Mark Knopfler'] = 1
 Lead_Singers['Justin Bieber'] = 0
 
 if Lead_Singer[] < 1:
-	print "Your misogyny is obnoxious. 'A whiny little bitch?' Really? Get off reddit and find a life."
+	print "Your misogyny is obnoxious. 'A whiny little bitch?' Really?"
 else:
-	print "Your shitty music taste bores me."
+	print "OKAY"
 
 ###Not an assertion, because assertions don't work like that.
 
